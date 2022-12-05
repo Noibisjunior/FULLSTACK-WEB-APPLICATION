@@ -18,8 +18,7 @@ const { engine } = require('express-handlebars');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const notFound = require('./middleware/notFound');
-const server = require('./middleware/internalServer');
-const HomeServer = require('./middleware/Home')
+const middleware = require('./middleware/internalServer');
 // app.use(express.static('public'))
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -35,7 +34,7 @@ app.get('/', (req, res) => {
   
 });
 app.use('/', router);
-app.use('*', notFound, server);
+app.use('*', notFound, middleware);
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)
