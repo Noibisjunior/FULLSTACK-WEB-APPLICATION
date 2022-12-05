@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "this is an introduction to the express framework",
   "main": "app.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  
+    "start": "node server.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
